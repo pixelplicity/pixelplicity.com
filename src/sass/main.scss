@@ -1,0 +1,126 @@
+@import "util/util";
+@import url('https://fonts.googleapis.com/css?family=PT+Sans');
+@charset "UTF-8";
+
+$bg: #ffffff;
+
+body {
+  background-color: $bg;
+  background-image: url("data:image/svg+xml,%3Csvg width='16' height='16' viewBox='0 0 16 16' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0 0h16v2h-6v6h6v8H8v-6H2v6H0V0zm4 4h2v2H4V4zm8 8h2v2h-2v-2zm-8 0h2v2H4v-2zm8-8h2v2h-2V4z' fill='%23383838' fill-opacity='0.05' fill-rule='evenodd'/%3E%3C/svg%3E");
+}
+html, body, #page {
+    font-family: PT Sans, sans-serif;
+    font-size: rem-calc(18);
+    @include breakpoint(medium down) {
+      font-size: rem-calc(14);
+    }
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    width: 100%;
+}
+
+#page {
+    display: table;
+}
+
+#wrapper {
+    display: table-cell;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+    vertical-align: middle;
+}
+
+#hello {
+    width: 60%;
+    @include breakpoint(small) {
+      width: 100%;
+    }
+    @include breakpoint(medium) {
+      width: 60%;
+    }
+    @include breakpoint(xlarge) {
+      width: 50%;
+    }
+    @include breakpoint(xxlarge) {
+      width: 40%;
+    }
+    margin: auto;
+}
+
+h1 {
+  color: #222;
+}
+
+.logo {
+  width: 100%;
+}
+
+.btn {
+  background: #f79736;
+  border: 3px solid #fff;
+	color: #fff;
+	font-family: inherit;
+	font-size: inherit;
+	cursor: pointer;
+	padding: 25px 80px;
+	display: inline-block;
+	margin: 15px 30px;
+	text-transform: uppercase;
+	letter-spacing: 1px;
+	font-weight: 700;
+	outline: none;
+	position: relative;
+	-webkit-transition: all 0.3s;
+	-moz-transition: all 0.3s;
+	transition: all 0.3s;
+  text-decoration: none;
+}
+
+.btn:after {
+	content: '';
+	position: absolute;
+	z-index: -1;
+	-webkit-transition: all 0.3s;
+	-moz-transition: all 0.3s;
+	transition: all 0.3s;
+}
+
+/* Button 1a */
+.btn:hover,
+.btn:active {
+	color: #0e83cd;
+	background: #fff;
+}
+
+#breakpoint-debug {
+  div {
+    display: none;
+  }
+  .small {
+    @include breakpoint(small) {
+      display: block;
+    }
+  }
+  .medium {
+    @include breakpoint(medium) {
+      display: block;
+    }
+  }
+  .large {
+    @include breakpoint(large) {
+      display: block;
+    }
+  }
+  .xlarge {
+    @include breakpoint(xlarge) {
+      display: block;
+    }
+  }
+  .xxlarge {
+    @include breakpoint(xxlarge) {
+      display: block;
+    }
+  }
+}
