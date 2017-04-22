@@ -3,3 +3,5 @@ RewriteCond %{HTTP_HOST} !^pixelplicity.com$ [NC]
 RewriteRule ^(.*)$ https://pixelplicity.com/$1 [L,R=301]
 RewriteCond %{HTTPS} off
 RewriteRule (.*) https://%{HTTP_HOST}%{REQUEST_URI} [R=301,L]
+
+ErrorDocument 404 /error.html
