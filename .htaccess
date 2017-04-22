@@ -1,3 +1,4 @@
+Options -Indexes
 RewriteEngine On
 RewriteCond %{HTTP_HOST} !^pixelplicity.com$ [NC]
 RewriteRule ^(.*)$ https://pixelplicity.com/$1 [L,R=301]
