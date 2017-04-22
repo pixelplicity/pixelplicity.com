@@ -1,19 +1,17 @@
 @import "util/util";
-@import url('https://fonts.googleapis.com/css?family=PT+Sans');
+@import url('https://fonts.googleapis.com/css?family=Lato');
+@import url('https://fonts.googleapis.com/css?family=Open+Sans');
 @charset "UTF-8";
 
-$bg: #ffffff;
+$bg: #3d3e44;
 
 body {
   background-color: $bg;
-  background-image: url("data:image/svg+xml,%3Csvg width='16' height='16' viewBox='0 0 16 16' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0 0h16v2h-6v6h6v8H8v-6H2v6H0V0zm4 4h2v2H4V4zm8 8h2v2h-2v-2zm-8 0h2v2H4v-2zm8-8h2v2h-2V4z' fill='%23383838' fill-opacity='0.05' fill-rule='evenodd'/%3E%3C/svg%3E");
+  background-image: url("data:image/svg+xml,%3Csvg width='16' height='16' viewBox='0 0 16 16' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0 0h16v2h-6v6h6v8H8v-6H2v6H0V0zm4 4h2v2H4V4zm8 8h2v2h-2v-2zm-8 0h2v2H4v-2zm8-8h2v2h-2V4z' fill='%23ffffff' fill-opacity='0.02' fill-rule='evenodd'/%3E%3C/svg%3E");
 }
 html, body, #page {
-    font-family: PT Sans, sans-serif;
-    font-size: rem-calc(18);
-    @include breakpoint(medium down) {
-      font-size: rem-calc(14);
-    }
+    font-family: Lato, sans-serif;
+    font-size: 100%;
     margin: 0;
     padding: 0;
     height: 100%;
@@ -21,36 +19,43 @@ html, body, #page {
 }
 
 #page {
-    display: table;
+  text-align: center;
 }
 
 #wrapper {
-    display: table-cell;
-    margin: 0;
-    padding: 0;
-    text-align: center;
-    vertical-align: middle;
+  margin: 0;
+  padding: 0;
+  text-align: center;
+  margin: 0 auto;
+  width: 80%;
+  @include breakpoint(xlarge up) {
+    width: 1054px;
+  }
+  @include breakpoint(small down) {
+    width: 100%;
+  }
+}
+
+#logo {
+  padding-top: rem-calc(20);
+  margin-bottom: rem-calc(120);
+  width: 200px;
 }
 
 #hello {
-    width: 60%;
-    @include breakpoint(small) {
-      width: 100%;
-    }
-    @include breakpoint(medium) {
-      width: 60%;
-    }
-    @include breakpoint(xlarge) {
-      width: 50%;
-    }
-    @include breakpoint(xxlarge) {
-      width: 40%;
-    }
-    margin: auto;
+  text-align: left;
 }
 
 h1 {
-  color: #222;
+  color: #fff;
+  font-size: em-calc(64);
+  text-transform: uppercase;
+}
+
+h2 {
+  color: #b3b9c7;
+  font-family: Open Sans, sans-serif;
+  font-size: em-calc(24);
 }
 
 .logo {
@@ -59,68 +64,27 @@ h1 {
 
 .btn {
   background: #f79736;
-  border: 3px solid #fff;
+  border: 1px solid #e08832;
+  border-radius: 2px;
 	color: #fff;
-	font-family: inherit;
-	font-size: inherit;
 	cursor: pointer;
-	padding: 25px 80px;
 	display: inline-block;
-	margin: 15px 30px;
-	text-transform: uppercase;
-	letter-spacing: 1px;
-	font-weight: 700;
-	outline: none;
-	position: relative;
-	-webkit-transition: all 0.3s;
-	-moz-transition: all 0.3s;
-	transition: all 0.3s;
+	font-family: Lato, sans-serif;
+	font-size: em-calc(24);
+	padding: rem-calc(12 32);
+	margin-top: 15px;
+	font-weight: bold;
+	-webkit-transition: background-color 150ms ease-in-out, box-shadow 300ms ease-in-out;
+	transition: background-color 150ms ease-in-out, box-shadow 300ms ease-in-out;
   text-decoration: none;
-}
-
-.btn:after {
-	content: '';
-	position: absolute;
-	z-index: -1;
-	-webkit-transition: all 0.3s;
-	-moz-transition: all 0.3s;
-	transition: all 0.3s;
+  vertical-align: middle;
+  user-select: none;
 }
 
 /* Button 1a */
 .btn:hover,
 .btn:active {
-	color: #0e83cd;
-	background: #fff;
-}
-
-#breakpoint-debug {
-  div {
-    display: none;
-  }
-  .small {
-    @include breakpoint(small) {
-      display: block;
-    }
-  }
-  .medium {
-    @include breakpoint(medium) {
-      display: block;
-    }
-  }
-  .large {
-    @include breakpoint(large) {
-      display: block;
-    }
-  }
-  .xlarge {
-    @include breakpoint(xlarge) {
-      display: block;
-    }
-  }
-  .xxlarge {
-    @include breakpoint(xxlarge) {
-      display: block;
-    }
-  }
+	color: #fff;
+	background-color: #e08832;
+  box-shadow: 0 1px 2px 0 rgba(37,22,8,0.25);
 }
