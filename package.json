@@ -7,7 +7,7 @@
     "build": "npm-run-all --parallel sass:prod images svg",
     "watch": "npm-run-all --parallel sass:dev reload",
     "cssmin": "cleancss -o dist/main.css dist/main.css",
-    "sass:prod": "node_modules/.bin/node-sass --output-style compressed src/sass/main.scss > dist/main.css && npm run cssmin",
+    "sass:prod": "node_modules/.bin/node-sass --output-style compressed src/sass/main.scss dist/main.css && npm run cssmin",
     "sass:dev": "node_modules/.bin/node-sass src/sass/main.scss -wo dist",
     "images": "imagemin src/images/*.{jpg,png} --out-dir=dist/images",
     "svg": "svgo -f src/images -o dist/images",
@@ -24,7 +24,7 @@
     "clean-css-cli": "^4.0.12",
     "glob": "^7.1.1",
     "imagemin-cli": "^3.0.0",
-    "node-sass": "^4.5.2",
+    "node-sass": "^7.0.1",
     "npm-run-all": "^4.0.2",
     "svgo": "^0.7.2"
   },
